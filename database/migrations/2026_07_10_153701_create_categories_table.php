@@ -11,22 +11,17 @@ return new class extends Migration
      */
     public function up(): void
 {
-    Schema::create('products', function (Blueprint $table) {
+    Schema::create('categories', function (Blueprint $table) {
         $table->id();
-        $table->string('name');
-        $table->text('description')->nullable();
-        $table->integer('stock');
-        $table->integer('price');
-        $table->foreignId('category_id')->constrained('categories')->onDelete('cascade'); // Relasi ke tabel kategori
+        $table->string('name'); // Tambahan kolom nama kategori
         $table->timestamps();
     });
 }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('categories');
     }
 };
