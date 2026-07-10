@@ -13,6 +13,6 @@ Route::get('/products', [ProductController::class, 'index']);
 
 // Route lainnya yang sudah kamu buat sebelumnya
 Route::get('/cart', function () {
-    return "Ini adalah halaman Keranjang";
+    return view('cart'); // Mengarahkan ke cart.blade.php
 });
 Route::get('/checkout', [OrderController::class, 'index']);

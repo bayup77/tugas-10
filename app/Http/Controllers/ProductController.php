@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class ProductController
 {
-    public function index()
-    {
-        // Menampilkan teks sederhana terlebih dahulu
-        return "Ini adalah halaman untuk Mengelola Produk";
-    }
+public function index()
+{
+    return view('products'); // Mengarahkan ke products.blade.php
+}
 }
