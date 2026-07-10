@@ -1,21 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 
-// Route Halaman Utama (/)
-Route::get('/', function () {
-    return view('welcome');
-});
+// Mengelola Halaman (menggunakan PageController)
+Route::get('/', [PageController::class, 'index']);
 
-// Route /products
+// Mengelola Produk (menggunakan ProductController)
 Route::get('/products', [ProductController::class, 'index']);
 
-// Route /cart (menggunakan closure sederhana sementara)
+// Route lainnya yang sudah kamu buat sebelumnya
 Route::get('/cart', function () {
     return "Ini adalah halaman Keranjang";
 });
-
-// Route /checkout
 Route::get('/checkout', [OrderController::class, 'index']);
