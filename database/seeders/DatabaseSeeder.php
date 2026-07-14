@@ -21,13 +21,23 @@ class DatabaseSeeder extends Seeder
         $kategoriElektronik = Category::create(['name' => 'Elektronik']);
         $kategoriPakaian = Category::create(['name' => 'Pakaian']);
 
-        // 3. Buat Produk dummy
+    // 3. Buat Produk dummy
         Product::create([
             'name' => 'Laptop Gaming',
+            'image' => 'https://picsum.photos/seed/laptop/400/300', // Gambar acak dari Picsum
             'description' => 'Laptop kencang untuk main game dan coding.',
             'stock' => 10,
             'price' => 15000000,
             'category_id' => $kategoriElektronik->id
+        ]);
+
+        Product::create([
+            'name' => 'Kaos Polos',
+            'image' => 'https://picsum.photos/seed/baju/400/300', // Gambar acak dari Picsum
+            'description' => 'Kaos bahan katun yang nyaman dipakai.',
+            'stock' => 50,
+            'price' => 100000,
+            'category_id' => $kategoriPakaian->id
         ]);
 
         Product::create([
