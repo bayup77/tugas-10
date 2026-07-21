@@ -2,12 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-class PageController
+abstract class Controller
 {
-    public function index()
-    {
-        return view('home'); 
-    }
+    // Kosongkan saja, ini memang hanya sebagai file induk (base controller)
 }
